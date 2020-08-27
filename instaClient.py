@@ -1,6 +1,6 @@
 from InstagramAPI import InstagramAPI
 
-class InstaAPI:
+class InstaClient:
     def __init__(self, username, password):
         self.username = username,
         self.client = InstagramAPI(username, password)
