@@ -49,3 +49,7 @@ Source: [Keyring pypi project page.](https://pypi.org/project/keyring/)
 ### Why did I make this?
 
 I mostly wanted to play with Python, so I grabbed a project from my running list of side project ideas and this one seemed easy.
+
+### What's next?
+
+I'm thinking of adding Twitter support soon. I think it would be useful to be able to delete tweets that are older than a particular date, and download them for personal archive purposes. I could also rework the current followback functionality 🤔. 
