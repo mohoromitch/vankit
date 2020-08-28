@@ -6,24 +6,28 @@ from instaClient import InstaClient
 from constants import AppConstant
 from constants import APP_INPUT_MAP
 
-def start_twitter(app, username, password):
+def run_tw(app, username, password):
     click.echo("Twitter isn't supported yet.")
 
-def start_instagram(app, username, password):
+def run_ig(app, username, password):
     try:
         print("Attempting logging in as %s..." % username)
         instaClient = InstaClient(username, password)
+        print("Your followers:")
         pprint(instaClient.getFollowersUsernames())
+        print("You're following:")
         pprint(instaClient.getFollowingUsernames())
+        print("Who's following you that you're not following back:")
         pprint(instaClient.getFollowersNotFollowingBack())
+        print("Who you're following that is not following back:")
         pprint(instaClient.getFollowingNotFollowingBack())
     except Exception:
         print(f"Couldn't log into {app}!")
         return
 
 app_router = {
-    AppConstant.INSTAGRAM: start_instagram, 
-    AppConstant.TWITTER: start_twitter
+    AppConstant.INSTAGRAM: run_ig, 
+    AppConstant.TWITTER: run_tw
 }
 
 def validate_app(ctx, param, value):
