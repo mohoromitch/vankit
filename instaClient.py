@@ -1,5 +1,6 @@
 from InstagramAPI import InstagramAPI
 
+
 class InstaClient:
     def __init__(self, username, password):
         self.username = username,
@@ -22,7 +23,7 @@ class InstaClient:
             for item in self.client.getTotalSelfFollowings():
                 self.following.append(item.get('username'))
         return self.following
-    
+
     def getFollowersNotFollowingBack(self):
         return [f for f in self.getFollowersUsernames() if f not in self.getFollowingUsernames()]
 
