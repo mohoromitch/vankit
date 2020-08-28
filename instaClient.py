@@ -3,10 +3,11 @@ from InstagramAPI import InstagramAPI
 class InstaClient:
     def __init__(self, username, password):
         self.username = username,
-        self.client = InstagramAPI(username, password)
-        self.client.login()
+        self.client = InstagramAPI(username, password) 
         self.followers = []
         self.following = []
+
+        self.client.login()
 
     def getFollowersUsernames(self):
         """return the account's followers, lazy loaded"""

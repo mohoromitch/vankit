@@ -1,9 +1,10 @@
-INSTAGRAM = "instagram"
-TWITTER = "twitter"
+class AppConstant:
+    INSTAGRAM = "instagram"
+    TWITTER = "twitter"
 
 APP_INPUT_MAP = {
-    "instagram": INSTAGRAM,
-    "i": INSTAGRAM,
-    "twitter": TWITTER,
-    "t": TWITTER
+    "instagram": AppConstant.INSTAGRAM,
+    "i": AppConstant.INSTAGRAM,
+    "twitter": AppConstant.TWITTER,
+    "t": AppConstant.TWITTER
 } 
