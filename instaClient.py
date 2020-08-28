@@ -4,7 +4,7 @@ from InstagramAPI import InstagramAPI
 class InstaClient:
     def __init__(self, username, password):
         self.username = username,
-        self.client = InstagramAPI(username, password) 
+        self.client = InstagramAPI(username, password)
         self.followers = []
         self.following = []
 
@@ -25,7 +25,9 @@ class InstaClient:
         return self.following
 
     def getFollowersNotFollowingBack(self):
-        return [f for f in self.getFollowersUsernames() if f not in self.getFollowingUsernames()]
+        return [f for f in self.getFollowersUsernames()
+                if f not in self.getFollowingUsernames()]
 
-    def getFollowingNotFollowingBack(self): 
-        return [f for f in self.getFollowingUsernames() if f not in self.getFollowersUsernames()]
+    def getFollowingNotFollowingBack(self):
+        return [f for f in self.getFollowingUsernames()
+                if f not in self.getFollowersUsernames()]
