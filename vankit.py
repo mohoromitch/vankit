@@ -69,7 +69,8 @@ def prompt_main(app, username):
     else:
         print(f"{app} password found for {username}!")
 
-    should_save_password = str(click.prompt("Remember this password? [y/n]",
+    should_save_password = str(click.prompt("Remember this password "
+                                            "in Keychain? [y/n]",
                                             type=str)).strip().lower() == "y"
 
     if should_save_password:
@@ -81,5 +82,4 @@ def prompt_main(app, username):
 
 
 if __name__ == "__main__":
-
     prompt_main(None, None)

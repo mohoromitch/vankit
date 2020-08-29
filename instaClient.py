@@ -3,6 +3,9 @@ from InstagramAPI import InstagramAPI
 
 class InstaClient:
     def __init__(self, username, password):
+        """Initialize the client
+        Note, this attempts to log into the underlying client API
+        and will raise an error if unsuccessful"""
         self.username = username,
         self.client = InstagramAPI(username, password)
         self.followers = []
