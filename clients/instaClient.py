@@ -14,24 +14,24 @@ class InstaClient:
 
         self.client.login()
 
-    def getFollowersUsernames(self):
+    def get_followers_usernames(self):
         """return the account's followers, lazy loaded"""
         if not self.followers:
             for item in self.client.getTotalSelfFollowers():
                 self.followers.append(item.get('username'))
         return self.followers
 
-    def getFollowingUsernames(self):
+    def get_following_usernames(self):
         """return the accounts followed by this account, lazy loaded"""
         if not self.following:
             for item in self.client.getTotalSelfFollowings():
                 self.following.append(item.get('username'))
         return self.following
 
-    def getFollowersNotFollowingBack(self):
-        return [f for f in self.getFollowersUsernames()
-                if f not in self.getFollowingUsernames()]
+    def get_followers_not_following_back(self):
+        return [f for f in self.get_followers_usernames()
+                if f not in self.get_following_usernames()]
 
-    def getFollowingNotFollowingBack(self):
-        return [f for f in self.getFollowingUsernames()
-                if f not in self.getFollowersUsernames()]
+    def get_following_not_following_back(self):
+        return [f for f in self.get_following_usernames()
+                if f not in self.get_followers_usernames()]
