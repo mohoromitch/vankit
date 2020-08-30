@@ -1,37 +1,10 @@
 import click
-from pprint import pprint
 from auth import Auth
-from instaClient import InstaClient
+from pprint import pprint
+from dispatch import dispatch_app
 
 from constants import AppConstant
 from constants import APP_INPUT_MAP
-
-
-def run_tw(app, username, password):
-    click.echo("Twitter isn't supported yet.")
-
-
-def run_ig(app, username, password):
-    try:
-        print("Attempting logging in as %s..." % username)
-        instaClient = InstaClient(username, password)
-        print("Your followers:")
-        pprint(instaClient.getFollowersUsernames())
-        print("You're following:")
-        pprint(instaClient.getFollowingUsernames())
-        print("Who's following you that you're not following back:")
-        pprint(instaClient.getFollowersNotFollowingBack())
-        print("Who you're following that is not following back:")
-        pprint(instaClient.getFollowingNotFollowingBack())
-    except Exception:
-        print(f"Couldn't log into {app}!")
-        return
-
-
-app_router = {
-    AppConstant.INSTAGRAM: run_ig,
-    AppConstant.TWITTER: run_tw
-}
 
 
 def validate_app(ctx, param, value):
@@ -78,7 +51,7 @@ def prompt_main(app, username):
         Auth.setPassword(app, username, password)
 
     print("Logging into {} for {}".format(APP_INPUT_MAP[app], username))
-    app_router[APP_INPUT_MAP[app]](app, username, password)
+    dispatch_app[APP_INPUT_MAP[app]](app, username, password)
 
 
 if __name__ == "__main__":
