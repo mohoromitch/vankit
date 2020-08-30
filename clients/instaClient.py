@@ -4,10 +4,10 @@ from clients.baseclient import BaseClient, formatted_section
 
 FOLLOWERS_SECTION_TITLE = "Your followers:\n"
 FOLLOWING_SECTION_TITLE = "You're following:\n"
-FOLLOWERS_NOT_FOLLOWING_BACK = "Who's following you "
-"that you're not following back:\n"
-FOLLOWING_NOT_FOLLOWING_BACK = "Who you're following "
-"that is not following back:"
+FOLLOWERS_NOT_FOLLOWING_BACK = ("Who's following you "
+                                "that you're not following back:\n")
+FOLLOWING_NOT_FOLLOWING_BACK = ("Who you're following "
+                                "that is not following back:\n")
 
 
 class InstaClient(BaseClient):
