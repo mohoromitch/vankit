@@ -20,13 +20,13 @@ In the repository:
 python3 ./vankit.py
 ```
 
-The onscreen instructions will guide you through usage. 
+The onscreen instructions will guide you through usage.
 
 You can also type:
 
-```bash 
+```bash
 python3 ./vankit.py --help
-``` 
+```
 
 For optional execution with supplied parameters.
 
@@ -34,7 +34,7 @@ For optional execution with supplied parameters.
 
 ### What does this script support?
 
-Currently the only thing it does is fetch some of your ig followers, and tells you in a pretty spartan way who you're following and isn't following you back, and vice versa. 
+Currently the only thing it does is fetch some of your ig followers, and tells you in a pretty spartan way who you're following and isn't following you back, and vice versa.
 
 It has the option to securely save your credentials though, which can save time when running a repetitive task like this. It uses keyring, which stores credentials in your system's credential store:
 
@@ -52,4 +52,4 @@ I mostly wanted to play with Python, so I grabbed a project from my running list
 
 ### What's next?
 
-I'm thinking of adding Twitter support soon. I think it would be useful to be able to delete tweets that are older than a particular date, and download them for personal archive purposes. I could also rework the current followback functionality 🤔. 
+I'm thinking of adding Twitter support soon. I think it would be useful to be able to delete tweets that are older than a particular date, and download them for personal archive purposes. The same could be extended to Reddit. I could also rework the current followback functionality 🤔.
