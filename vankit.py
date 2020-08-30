@@ -52,7 +52,7 @@ def prompt_main(app, username):
         auth.setPassword(username, password)
 
     print("Logging into {} for {}".format(APP_INPUT_MAP[app], username))
-    dispatch_app[APP_INPUT_MAP[app]](app, username, password)
+    print(dispatch_app[APP_INPUT_MAP[app]](app, username, password))
 
 
 if __name__ == "__main__":

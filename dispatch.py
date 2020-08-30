@@ -4,20 +4,19 @@ from clients.instaClient import InstaClient
 
 
 def run_tw(app, username, password):
-    print("Twitter isn't supported yet.")
+    return "Twitter isn't supported yet."
 
 
 def run_ig(app, username, password):
     try:
-        print("Attempting logging in as %s..." % username)
         instaClient = InstaClient(username, password)
-        print(instaClient.generate_report())
-    except Exception:
-        return (f"Couldn't log into {app}!")
+        return instaClient.generate_report()
+    except Exception as e:
+        return f"Couldn't log into {app}! {e}"
 
 
 def run_rd(app, username, password):
-    print("Reddit isn't supported yet.")
+    "Reddit isn't supported yet."
 
 
 dispatch_app = {
