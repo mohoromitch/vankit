@@ -11,14 +11,7 @@ def run_ig(app, username, password):
     try:
         print("Attempting logging in as %s..." % username)
         instaClient = InstaClient(username, password)
-        print("Your followers:")
-        pprint(instaClient.get_followers_usernames())
-        print("You're following:")
-        pprint(instaClient.get_following_usernames())
-        print("Who's following you that you're not following back:")
-        pprint(instaClient.get_followers_not_following_back())
-        print("Who you're following that is not following back:")
-        pprint(instaClient.get_following_not_following_back())
+        print(instaClient.generate_report())
     except Exception:
         return (f"Couldn't log into {app}!")
 
