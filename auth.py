@@ -1,15 +1,17 @@
 import keyring
+from constants import AUTH_PREFIX
 
 
 class Auth:
-    @staticmethod
-    def getCredential(app, username):
-        return keyring.get_credential(app, username)
 
-    @staticmethod
-    def getPassword(app, username):
-        return keyring.get_password(app, username)
+    def __init__(self, app):
+        self.service_name = AUTH_PREFIX + app
 
-    @staticmethod
-    def setPassword(app, username, password):
-        keyring.set_password(app, username, password)
+    def getCredential(self, username):
+        return keyring.get_credential(self.service_name, username)
+
+    def getPassword(self, username):
+        return keyring.get_password(self.service_name, username)
+
+    def setPassword(self, username, password):
+        keyring.set_password(self.service_name, username, password)

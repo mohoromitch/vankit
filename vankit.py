@@ -32,7 +32,8 @@ def validate_username(ctx, param, value):
               help="Your app specific login username",
               callback=validate_username)
 def prompt_main(app, username):
-    password = Auth.getPassword(app, username)
+    auth = Auth(app)
+    password = auth.getPassword(username)
 
     if not password:
         print(f"No saved password found for {username}...")
@@ -48,7 +49,7 @@ def prompt_main(app, username):
 
     if should_save_password:
         print("Saving password in keychain...")
-        Auth.setPassword(app, username, password)
+        auth.setPassword(username, password)
 
     print("Logging into {} for {}".format(APP_INPUT_MAP[app], username))
     dispatch_app[APP_INPUT_MAP[app]](app, username, password)

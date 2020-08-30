@@ -12,3 +12,5 @@ APP_INPUT_MAP = {
     "reddit": AppConstant.REDDIT,
     "r": AppConstant.REDDIT
 }
+
+AUTH_PREFIX = "vankit_"
