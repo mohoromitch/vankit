@@ -1,6 +1,6 @@
 from constants import AppConstant
 from pprint import pprint
-from instaClient import InstaClient
+from clients.instaClient import InstaClient
 
 
 def run_tw(app, username, password):
@@ -23,7 +23,12 @@ def run_ig(app, username, password):
         return (f"Couldn't log into {app}!")
 
 
+def run_rd(app, username, password):
+    print("Reddit isn't supported yet.")
+
+
 dispatch_app = {
     AppConstant.INSTAGRAM: run_ig,
-    AppConstant.TWITTER: run_tw
+    AppConstant.TWITTER: run_tw,
+    AppConstant.REDDIT: run_rd,
 }

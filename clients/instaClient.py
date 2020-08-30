@@ -1,4 +1,5 @@
 from InstagramAPI import InstagramAPI
+from clients.client import Client
 
 
 class InstaClient:
